@@ -18,6 +18,7 @@ const blogAuth = require("./middlewire/blogAuth");
 const Post = require("./models/post");
 const authenticate = require("./middlewire/authenticate.js");
 const compression = require("compression");
+const PORT = process.env.PORT || 5500;
 // Step 1:
 dotenv.config();
 // Step 2:
@@ -192,6 +193,6 @@ app.get("/resetPassword",(req,res)=>{
   res.sendFile(__dirname + '/public/reset-password.html');
 })
 // Setting the Port...
-app.listen(5500, function () {
+app.listen(PORT, function () {
   console.log("Server listening to the port 5500");
 });
